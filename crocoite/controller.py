@@ -22,7 +22,7 @@
 Controller classes, handling actions required for archival
 """
 
-import time, tempfile, asyncio, json, os
+import time, tempfile, asyncio, json, os, shutil
 from itertools import islice
 from datetime import datetime
 from operator import attrgetter
@@ -450,7 +450,7 @@ class RecursiveController:
             code = await process.wait()
             if code == 0:
                 # atomically move once finished
-                os.rename (dest.name, destpath)
+                shutil.move (dest.name, destpath)
             else:
                 self.stats['crashed'] += 1
                 logStats ()
