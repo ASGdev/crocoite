@@ -296,6 +296,7 @@ class Process:
                 '--hide-scrollbars', # hide scrollbars on screenshots
                 '--mute-audio', # don’t play any audio
                 '--remote-debugging-port=0', # pick a port. XXX: we may want to use --remote-debugging-pipe instead
+                '--no-sandbox',
                 '--homepage=about:blank',
                 'about:blank']
         # start new session, so ^C does not affect subprocess
